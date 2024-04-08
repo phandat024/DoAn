@@ -27,9 +27,9 @@
         </ul>
       </div>
     </div>
-    <form class="d-flex custom-form">
-      <button type="button" class="btn btn-outline-dark ">Search</button>
+    <form class="d-flex custom-form">     
       <input class="form-control " type="text" placeholder="Search">
+      <button type="button" class="btn btn-outline-dark ">Search</button>
     </form>
     <!-- Thêm class của Font Awesome để hiển thị icon -->
     <i class='fas fa-user-alt me-3' style='font-size:24px'></i>
