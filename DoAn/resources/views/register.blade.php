@@ -1,9 +1,9 @@
 
 @include("header")
-<link rel="stylesheet" href="{{ asset('css\register.css') }}">
-</head>
+@include("navbar")
 <body>
-<div class="container padd">
+    <login>
+    <div class="container padd">
         <div class="formDK text-center mainColor text-center d-block text-white "><div>
             <h1>Đăng kí</h1>
         </div>
@@ -24,6 +24,7 @@
         </form>
         <p>Bạn đã có tài khoản? Hãy bấm vào đây để <a href="/login">Đăng nhập</a></p></div>    
     </div>
+    </login>
 </body>
 @include("footer")
 
