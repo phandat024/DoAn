@@ -1,15 +1,6 @@
 @include('header')
+@include('navbar')
 <body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="login.html">Đăng nhập</a></li>
-            <li><a href="">Đăng ký</a></li>
-            <li><a href="">Danh sách</a></li>
-            <li><a href="">Chỉnh sửa</a></li>
-            <li><a href="">Chi tiết</a></li>
-        </ul>
-    </nav>
 
     <div class="login-container">
         <h2>Đăng nhập</h2>
