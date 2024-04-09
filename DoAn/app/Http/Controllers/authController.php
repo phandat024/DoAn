@@ -10,6 +10,11 @@ class authController extends Controller
     {
         return view('login');
     }
+    public function register()
+    {
+        return view('register');
+    }
+
 /*
     public function customLogin(Request $request)
     {
@@ -27,10 +32,7 @@ class authController extends Controller
         return redirect("login")->withSuccess('Email hoac mat khau khong dung');
     }
 */
-    public function register()
-    {
-        return view('register');
-    }
+   
 
     public function customRegistration(Request $request)
     {
@@ -44,7 +46,7 @@ class authController extends Controller
 
         return redirect("login")->withSuccess('Ban da tao tai khoan');
     }
-
+    
     public function create(array $data)
     {
         return User::create([
