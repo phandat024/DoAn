@@ -1,4 +1,4 @@
-<body> 
+
     <footer>
         <div class="footer-container">
             <div class="footer-info">
@@ -24,5 +24,3 @@
             <p>&copy; 2024 Your Website Name</p>
         </div>
     </footer>
-</body>
-</html>

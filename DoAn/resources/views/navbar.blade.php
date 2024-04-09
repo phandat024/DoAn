@@ -1,4 +1,3 @@
-<body>
   <nav class="navbar navbar-expand-sm ">
     <div class="container-fluid">
       <a class="navbar-brand ms-auto" href="javascript:void(0)">LOGO</a>
@@ -35,5 +34,4 @@
     <i class='fas fa-user-alt me-3' style='font-size:24px'></i>
     <i class='fas fa-shopping-cart me-3' style='font-size:24px'></i>
   </nav>
-</body>
  
