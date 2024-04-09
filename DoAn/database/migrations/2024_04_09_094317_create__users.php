@@ -17,6 +17,13 @@ return new class extends Migration
             $table->string('password');
             $table->timestamps();
         });
+
+        DB::table('_users')->insert([
+            'email' => 'example@example.com',
+            'password' => bcrypt('password'),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 
     /**
