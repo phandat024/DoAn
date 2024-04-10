@@ -19,10 +19,10 @@
         </div>
         <form action="{{route('enrollRegister')}}" method="get" class="mx-4 border-top">
             <p class="d-inline">Tài khoản</p>
-            <input type="text" class="m-1 form-control " id="email" placeholder="Từ 8-15 kí tự a-zA-Z 0-9">
+            <input type="text" class="m-1 form-control " id="email" name="email" placeholder="Từ 8-15 kí tự a-zA-Z 0-9">
             <br>
             <p class="d-inline">Mật khẩu</p>
-            <input type="password" class="mt-1 form-control" id="password"placeholder="Từ 8-15 kí tự a-zA-Z 0-9">
+            <input type="password" class="mt-1 form-control" id="password" name="password" placeholder="Từ 8-15 kí tự a-zA-Z 0-9">
             <br>
             <p class="d-inline">Nhập lại mật khẩu</p>
             <input type="password" class="mt-1 form-control" placeholder="Nhập lại mật khẩu">

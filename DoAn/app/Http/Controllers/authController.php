@@ -37,7 +37,6 @@ class authController extends Controller
 
     public function enrollRegister(Request $request)
     {
-     
         $data = $request->all();
    
         $check = $this->create($data);
@@ -48,7 +47,7 @@ class authController extends Controller
     {
         return User::create([
             'email' => $data['email'],
-            'password' => Hash::make($data['password'])
+            'password' => $data['password']
         ]);
     }
 /*
