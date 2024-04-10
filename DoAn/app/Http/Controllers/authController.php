@@ -34,7 +34,7 @@ class authController extends Controller
 */
    
 
-    public function customRegistration(Request $request)
+    public function enrollRegister(Request $request)
     {
         $request->validate([
             'email' => 'required|email|unique:users',
@@ -54,11 +54,12 @@ class authController extends Controller
             'password' => Hash::make($data['password'])
         ]);
     }
-
+/*
     public function signOut() {
         Session::flush();
         Auth::logout();
 
         return Redirect('login');
     }
+    */
 }

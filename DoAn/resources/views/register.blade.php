@@ -17,7 +17,7 @@
         <div class="formDK text-center mainColor text-center d-block text-white "><div>
             <h1>Đăng kí</h1>
         </div>
-        <form action="#" method="get" class="mx-4 border-top">
+        <form action="{{route:enrollRegister}}" method="get" class="mx-4 border-top">
             <p class="d-inline">Tài khoản</p>
             <input type="text" class="m-1 form-control " placeholder="Từ 8-15 kí tự a-zA-Z 0-9">
             <br>
