@@ -36,20 +36,16 @@ class authController extends Controller
 
     public function enrollRegister(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
-        ]);
-
+     
         $data = $request->all();
+   
         $check = $this->create($data);
-
         return redirect("login")->withSuccess('Ban da tao tai khoan');
     }
     
     public function create(array $data)
     {
-        return User::create([
+        return users::create([
             'email' => $data['email'],
             'password' => Hash::make($data['password'])
         ]);
