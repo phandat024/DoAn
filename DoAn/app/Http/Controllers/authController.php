@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class authController extends Controller
 {
@@ -45,7 +46,7 @@ class authController extends Controller
     
     public function create(array $data)
     {
-        return users::create([
+        return User::create([
             'email' => $data['email'],
             'password' => Hash::make($data['password'])
         ]);
