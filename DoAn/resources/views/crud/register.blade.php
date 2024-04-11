@@ -14,11 +14,8 @@
             <p class="d-inline">Mật khẩu</p>
             <input type="password" class="mt-1 form-control" id="password" name="password" placeholder="Từ 8-15 kí tự a-zA-Z 0-9">
             <br>
-            <p class="d-inline">Nhập lại mật khẩu</p>
-            <input type="password" class="mt-1 form-control" placeholder="Nhập lại mật khẩu">
-            <br>
             <p class="d-inline">SDT</p>
-            <input type="text" class="mt-1 form-control" placeholder="Số điện thoại">
+            <input type="text" class="mt-1 form-control" id="sdt" name="sdt" placeholder="Số điện thoại">
             <br>
             <button type="submit" class="my-1 rounded">Đăng kí</button>
         </form>

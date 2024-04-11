@@ -9,8 +9,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Username</th>
-                            <th>Name</th>
+                          
                             <th>Email</th>
                             <th>Password</th>
                             <th>Action</th>
@@ -20,16 +19,11 @@
                         @foreach($users as $user)
                             <tr>
                                 <td>{{ $user->id }}</td>
-                                <td>{{ $user->username }}</td>
-                                <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->password }}</td>
                                 <td>
-                                    <form action="{{ route('user.deleteUser', ['id' => $user->id]) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="delete-btn">Xóa</button>
-                                    </form>
+                                <a href="{{ route('user.deleteUser', ['id' => $user->id]) }}">Delete</a>
+                                <a href="{{ route('user.postUpdateUser', ['id' => $user->id]) }}">Chỉnh sữa</a>
                                 </td>
                             </tr>
                         @endforeach

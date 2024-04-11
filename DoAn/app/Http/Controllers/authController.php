@@ -17,10 +17,6 @@ class authController extends Controller
     {
         return view('crud.register');
     }
-    public function list()
-    {
-        return view("crud.list");
-    }
 
 
 
@@ -31,8 +27,9 @@ class authController extends Controller
             'email' => 'required',
             'password' => 'required',
         ]);
+        
         $credentials = $request->only('email', 'password');
-        if ($true=Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials)) {
             return redirect()->intended('list')
                 ->withSuccess('Da dang nhap');
         }
@@ -46,27 +43,34 @@ class authController extends Controller
             'email' => 'required',
             'password' => 'required',
         ]);
+
+     
         $data = $request->all();
-        $check = $this->create($data);
+        User::create([
+            
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),  
+
+        ]);
         return redirect("login")->withSuccess('Ban da tao tai khoan');
     }
     
-    public function create(array $data)
-    {
-        return User::create([
-            'email' => $data['email'],
-            'password' => Hash::make($data['password'])
-        ]);
-    }
 
     public function listUser()
     {
-        if(Auth::check()){
-            $users = User::all();
-            return view('crud_user.list', ['users' => $users]);
+        $users = User::all();      
+            if(Auth::check()){
+                $users = User::all();
+                return view('crud.list', ['users' => $users]);          
         }
-
         return redirect("login")->withSuccess('You are not allowed to access');
+  
+    }
+
+    public function deleteUser(Request $request) {
+        $id = $request->get('id');
+        $user = User::destroy($id);
+        return redirect("list")->withSuccess('You have signed-in');
     }
 
     public function signOut() {
@@ -74,5 +78,30 @@ class authController extends Controller
         Auth::logout();
 
         return Redirect('login');
+    }
+
+    public function updateUser(Request $request)
+    {
+        $user_id = $request->get('id');
+        $user = User::find($user_id);
+
+        return view('crud.update', ['user' => $user]);
+    }
+
+    public function postUpdateUser(Request $request)
+    {
+        $input = $request->all();
+
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+       $user = User::find($input['id']);
+       $user->email = $input['email'];
+       $user->password = $input['password'];
+       $user->save();
+
+        return redirect("list")->withSuccess('You have signed-in');
     }
 }

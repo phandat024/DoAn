@@ -22,4 +22,9 @@ Route::get('enrollRegister', [authController::class, 'enrollRegister'])->name('e
 
 Route::get('signout', [authController::class, 'signOut'])->name('signout');
 
-Route::get('list', [authController::class, 'list'])->name('list');
+Route::get('list', [authController::class, 'listUser'])->name('list');
+
+Route::get('delete', [authController::class, 'deleteUser'])->name('user.deleteUser');
+
+Route::post('update', [authController::class, 'postUpdateUser'])->name('user.postUpdateUser');
+Route::get('update', [authController::class, 'updateUser'])->name('user.updateUser');
