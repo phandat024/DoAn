@@ -21,6 +21,7 @@
                                 <td>{{ $user->id }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->password }}</td>
+                                <td>{{ $user->sdt }}</td>
                                 <td>
                                 <a href="{{ route('user.deleteUser', ['id' => $user->id]) }}">Delete</a>
                                 <a href="{{ route('user.postUpdateUser', ['id' => $user->id]) }}">Chỉnh sữa</a>
