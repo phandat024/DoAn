@@ -42,15 +42,16 @@ class authController extends Controller
         $request->validate([
             'email' => 'required',
             'password' => 'required',
+            'sdt' => 'required',
         ]);
 
      
         $data = $request->all();
         User::create([
-            
+            'sdt' => $data['sdt'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),  
-
+            
         ]);
         return redirect("login")->withSuccess('Ban da tao tai khoan');
     }
