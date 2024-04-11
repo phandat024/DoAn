@@ -1,11 +1,11 @@
 @extends('dashboard')
 
 @section('content')
-    <main class="login-form">
+    <main class="user-management">
         <div class="container">
-            <div class="row justify-content-center">
-                <h1>Quản lý người dùng</h1>
-                <table>
+            <h1>Quản lý người dùng</h1>
+            <div class="table-container">
+                <table class="user-table">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -28,7 +28,7 @@
                                     <form action="{{ route('user.deleteUser', ['id' => $user->id]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit">Xóa</button>
+                                        <button type="submit" class="delete-btn">Xóa</button>
                                     </form>
                                 </td>
                             </tr>
