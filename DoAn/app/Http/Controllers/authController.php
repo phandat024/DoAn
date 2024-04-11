@@ -43,11 +43,13 @@ class authController extends Controller
             'email' => 'required',
             'password' => 'required',
             'sdt' => 'required',
+            'username' => 'required',
         ]);
 
      
         $data = $request->all();
         User::create([
+            'username' => $data['username'],
             'sdt' => $data['sdt'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),  
@@ -96,11 +98,15 @@ class authController extends Controller
         $request->validate([
             'email' => 'required',
             'password' => 'required',
+            'sdt' => 'required',
+            'username' => 'required',
         ]);
 
        $user = User::find($input['id']);
        $user->email = $input['email'];
        $user->password = $input['password'];
+       $user->sdt = $input['sdt'];
+       $user->username = $input['username'];
        $user->save();
 
         return redirect("list")->withSuccess('You have signed-in');

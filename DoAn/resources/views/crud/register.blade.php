@@ -17,6 +17,9 @@
             <p class="d-inline">SDT</p>
             <input type="text" class="mt-1 form-control" id="sdt" name="sdt" placeholder="Số điện thoại">
             <br>
+            <p class="d-inline">Tên người dùng</p>
+            <input type="text" class="mt-1 form-control" id="username" name="username" placeholder="Tên người dùng">
+            <br>
             <button type="submit" class="my-1 rounded">Đăng kí</button>
         </form>
         <p>Bạn đã có tài khoản? Hãy bấm vào đây để <a href="/login">Đăng nhập</a></p></div>    
