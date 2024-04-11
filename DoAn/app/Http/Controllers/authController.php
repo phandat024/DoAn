@@ -17,24 +17,25 @@ class authController extends Controller
     {
         return view('crud.register');
     }
-    public function homepage()
+    public function list()
     {
-        return view("homepage");
+        return view("crud.list");
     }
+
+
 
     public function loginIn(Request $request)
     {
+       
         $request->validate([
             'email' => 'required',
             'password' => 'required',
         ]);
-
         $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('homepage')
+        if ($true=Auth::attempt($credentials)) {
+            return redirect()->intended('list')
                 ->withSuccess('Da dang nhap');
         }
-
         return redirect("login")->withSuccess('Email hoac mat khau khong dung');
     }
    
@@ -56,6 +57,16 @@ class authController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password'])
         ]);
+    }
+
+    public function listUser()
+    {
+        if(Auth::check()){
+            $users = User::all();
+            return view('crud_user.list', ['users' => $users]);
+        }
+
+        return redirect("login")->withSuccess('You are not allowed to access');
     }
 
     public function signOut() {

@@ -38,10 +38,10 @@
         </li>
         @guest
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('login') }}">Login</a>
+          <a class="nav-link" href="{{ route('login') }}">Đăng nhập</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('register') }}">Create user</a>
+          <a class="nav-link" href="{{ route('register') }}">Đăng kí</a>
         </li>
         
         <li class="nav-item">
@@ -65,7 +65,7 @@
     @yield("content")
 
 
-    
+
     <footer>
         <div class="footer-container">
             <div class="footer-info">

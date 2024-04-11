@@ -14,11 +14,12 @@ use App\Http\Controllers\authController;
 |
 */
 Route::get('login',[authController::class,'login'])->name('login');
-Route::get('register',[authController::class,'register'])->name('register');
-Route::get('homepage', [authController::class, 'homepage'])->name('homepage');
+Route::post('loginIn', [authController::class, 'loginIn'])->name('loginIn');
 
+Route::get('register',[authController::class,'register'])->name('register');
 Route::get('enrollRegister', [authController::class, 'enrollRegister'])->name('enrollRegister');
-Route::post('login', [authController::class, 'loginIn'])->name('loginIn');
+
 
 Route::get('signout', [authController::class, 'signOut'])->name('signout');
 
+Route::get('list', [authController::class, 'list'])->name('list');
