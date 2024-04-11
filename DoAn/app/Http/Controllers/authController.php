@@ -2,26 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
-
+use Session;
+use Hash;
 class authController extends Controller
 {
     public function login()
     {
-        return view('login');
+        return view('crud.login');
     }
     public function register()
     {
-        return view('register');
+        return view('crud.register');
+    }
+    public function homepage()
+    {
+        return view("homepage");
     }
 
-/*
-    public function customLogin(Request $request)
+    public function loginIn(Request $request)
     {
         $request->validate([
             'email' => 'required',
-            'password' => 'required|min:8',
+            'password' => 'required',
         ]);
 
         $credentials = $request->only('email', 'password');
@@ -32,13 +37,15 @@ class authController extends Controller
 
         return redirect("login")->withSuccess('Email hoac mat khau khong dung');
     }
-*/
    
 
     public function enrollRegister(Request $request)
     {
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
         $data = $request->all();
-   
         $check = $this->create($data);
         return redirect("login")->withSuccess('Ban da tao tai khoan');
     }
@@ -47,15 +54,14 @@ class authController extends Controller
     {
         return User::create([
             'email' => $data['email'],
-            'password' => $data['password']
+            'password' => Hash::make($data['password'])
         ]);
     }
-/*
+
     public function signOut() {
         Session::flush();
         Auth::logout();
 
         return Redirect('login');
     }
-    */
 }

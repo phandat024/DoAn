@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ asset('css\navbar.css') }}">
     <link rel="stylesheet" href="{{ asset('css\login.css') }}">
 </head>
-@include("navbar")
+@include("share.navbar")
 <body>
     <login>
     <div class="container padd">
@@ -18,6 +18,7 @@
             <h1>Đăng kí</h1>
         </div>
         <form action="{{route('enrollRegister')}}" method="get" class="mx-4 border-top">
+            @csrf
             <p class="d-inline">Tài khoản</p>
             <input type="text" class="m-1 form-control " id="email" name="email" placeholder="Từ 8-15 kí tự a-zA-Z 0-9">
             <br>
@@ -36,6 +37,6 @@
     </div>
     </login>
 </body>
-@include("footer")
+@include("share.footer")
 </html>
     

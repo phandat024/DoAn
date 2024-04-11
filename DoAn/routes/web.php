@@ -15,8 +15,10 @@ use App\Http\Controllers\authController;
 */
 Route::get('login',[authController::class,'login'])->name('login');
 Route::get('register',[authController::class,'register'])->name('register');
+Route::get('homepage', [authController::class, 'homepage'])->name('homepage');
+
 Route::get('enrollRegister', [authController::class, 'enrollRegister'])->name('enrollRegister');
-/*
-Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
-Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
-*/
+Route::post('login', [authController::class, 'loginIn'])->name('loginIn');
+
+Route::get('signout', [authController::class, 'signOut'])->name('signout');
+
