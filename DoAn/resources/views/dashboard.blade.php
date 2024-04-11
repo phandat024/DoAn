@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css\footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css\register.css') }}">
+    <link rel="stylesheet" href="{{ asset('css\navbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css\login.css') }}">
+</head>
+<body>
 <nav class="navbar navbar-expand-sm ">
   <div class="container-fluid">
     <a class="navbar-brand ms-auto" href="javascript:void(0)">LOGO</a>
@@ -47,3 +60,36 @@
   <i class='fas fa-user-alt me-3' style='font-size:24px'></i>
   <i class='fas fa-shopping-cart me-3' style='font-size:24px'></i>
 </nav>
+
+
+    @yield("content")
+
+
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>About Us</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero sed lobortis dictum.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: contact@example.com</p>
+                <p>Phone: +123456789</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Your Website Name</p>
+        </div>
+    </footer>
+</body>
+</html>
